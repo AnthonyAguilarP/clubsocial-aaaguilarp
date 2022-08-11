@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Empleado extends Persona{
     Empleado(){
     }
-    Scanner sc=new Scanner(System.in);
+    private Scanner sc=new Scanner(System.in);
     private Double NumEmpleado;
     private String Puesto,D="20",M="05",A="2005";
     private Persona a=new Persona();
 
-    public Empleado(String Dia, String Mes, String Año, String Nombre, int Genero, Double NumEmpleado, String Puesto) {
-        super(Dia, Mes, Año, Nombre, Genero);
+    public Empleado(String Dia, String Mes, String Año, String pNombre, String sNombre, String pApellido, String sApellido, int Genero, Double NumEmpleado, String Puesto) {
+        super(Dia, Mes, Año, pNombre, sNombre, pApellido, sApellido, Genero);
         this.NumEmpleado = NumEmpleado;
         this.Puesto = Puesto;
     }
