@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Miembro extends Persona{
     Miembro(){
     }
-    Scanner sc=new Scanner(System.in);
+    private Scanner sc=new Scanner(System.in);
     private Double NumMembresia;
     private String aa,dd,mm;
-    int A;
+    private int A;
 
-    public Miembro(Double NumMembresia, String Dia, String Mes, String Año, String Nombre, int Genero) {
-        super(Dia, Mes, Año, Nombre, Genero);
+    public Miembro(Double NumMembresia, String Dia, String Mes, String Año, String pNombre, String sNombre, String pApellido, String sApellido, int Genero) {
+        super(Dia, Mes, Año, pNombre, sNombre, pApellido, sApellido, Genero);
         this.NumMembresia = NumMembresia;
     }
     
@@ -25,10 +25,10 @@ public class Miembro extends Persona{
         else break;
         }
     }
-    public String getEmision(){
+    private String getEmision(){
         return "Fecha de emision de la membresia= "+aa+"-"+mm+"-"+dd;
     }
-    public String getVencimiento(){
+    private String getVencimiento(){
         A=A+2;aa=String.valueOf(A);
         return "Fecha de vencimiento de la membresia= "+aa+"-"+mm+"-"+dd;
     }
@@ -36,5 +36,4 @@ public class Miembro extends Persona{
     public String toString() {
         return Persona()+", Numero de la membresia= "+NumMembresia+", "+getEmision()+", "+getVencimiento();
     }
-    
 }
