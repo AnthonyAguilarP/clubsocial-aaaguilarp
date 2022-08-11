@@ -5,15 +5,18 @@ import java.util.Scanner;
 public class Registro {
     Registro(){
     }
-    Scanner sc=new Scanner(System.in);
-    private String Nombre,Dia,Mes,Año,Puesto;
+    private Scanner sc=new Scanner(System.in);
+    private String pNombre,sNombre,pApellido,sApellido,Dia,Mes,Año,Puesto;
     private Double NumMembresia,NumEmpleado;
     private int Genero;
-     Persona b=new Persona();
-     Miembro a=new Miembro();
-     Empleado c=new Empleado();
+    private Persona b=new Persona();
+    private Miembro a=new Miembro();
+    private Empleado c=new Empleado();
      public void Persona(){
-         System.out.print("Ingrese su Nombre\nNombre: ");Nombre=sc.next();
+         System.out.print("Ingrese su Nombre\nPrimer nombre: ");pNombre=sc.next();
+         System.out.print("Segundo nombre: ");sNombre=sc.next();
+         System.out.print("Primer apellido: ");pApellido=sc.next();
+         System.out.print("Segundo apellido: ");sApellido=sc.next();
         while(9!=0){
         System.out.print("El programa espera un año de cuatro digitos\nIngrese su fecha de nacimiento\nDía: ");Dia=sc.next();
         System.out.print("Mes: ");Mes=sc.next();
@@ -29,7 +32,7 @@ public class Registro {
      }
     public void Miembro(){
         System.out.print("Numero de la membresia: ");NumMembresia=sc.nextDouble();
-        a=new Miembro(NumMembresia,Dia,Mes,Año,Nombre,Genero);
+        a=new Miembro(NumMembresia,Dia,Mes,Año,pNombre,sNombre,pApellido,sApellido,Genero);
         a.Membresia();
     }
     public String RegistroMiembro(){
@@ -38,7 +41,7 @@ public class Registro {
     public void Empleado(){
         System.out.print("Ingrese el puesto del empleado\nPuesto del empleado: ");Puesto=sc.next();
         System.out.print("Ingrese el numero del empleado: ");NumEmpleado=sc.nextDouble();
-        c=new Empleado(Dia,Mes,Año,Nombre,Genero,NumEmpleado,Puesto);
+        c=new Empleado(Dia,Mes,Año,pNombre,sNombre,pApellido,sApellido,Genero,NumEmpleado,Puesto);
         c.FechaIngreso();
     }
     public String RegistroEmpleado(){
